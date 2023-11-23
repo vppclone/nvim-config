@@ -2,3 +2,4 @@
 require("config.lazy")
 require("main.dashboard")
 require("main.discipline")
+require("main.diffview")

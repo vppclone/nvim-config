@@ -83,3 +83,6 @@ keymaps.set("n", "<leader>a", ":AerialNavToggle<CR>", opts)
 -- Move line
 keymaps.set("n", "<M-down>", ":m+2<CR>", opts)
 keymaps.set("n", "<M-up>", ":m-2<CR>", opts)
+
+-- Diffview
+keymaps.set("n", "<leader>gg", ":DiffviewOpen<CR>", opts)

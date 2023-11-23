@@ -48,7 +48,6 @@ return {
                 end)
             end,
         })
-
         opts.presets.lsp_doc_border = true
     end,
 }

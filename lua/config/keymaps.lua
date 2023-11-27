@@ -30,6 +30,9 @@ end
 keymaps.set("n", "+", "<C-a>")
 keymaps.set("n", "-", "<C-x>")
 
+-- redo
+keymaps.set("n", "r", "<C-r>", opts)
+
 -- Select all
 keymaps.set("n", "<C-a>", "gg<S-v>G")
 
@@ -83,6 +86,11 @@ keymaps.set("n", "<leader>a", ":AerialNavToggle<CR>", opts)
 -- Move line
 keymaps.set("n", "<M-down>", ":m+2<CR>", opts)
 keymaps.set("n", "<M-up>", ":m-2<CR>", opts)
+keymaps.set("v", "<M-down>", ":<','>m+2<CR>", opts)
+keymaps.set("v", "<M-up>", ":<','>m-2<CR>", opts)
 
 -- Diffview
 keymaps.set("n", "<leader>gg", ":DiffviewOpen<CR>", opts)
+
+-- Search
+keymaps.set("v", "/", '"fy/\\V<C-R>f<CR>N', opts)

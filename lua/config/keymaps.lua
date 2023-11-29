@@ -71,11 +71,11 @@ keymaps.set("n", "<C-p>", function()
     tp.git_files()
 end, opts)
 
-keymaps.set("n", "<C-g>", function()
+keymaps.set("n", "<C-F>", function()
     tp.live_grep()
 end, opts)
 
-keymaps.set("v", "<C-g>", function()
+keymaps.set("v", "<C-F>", function()
     local text = vim.getVisualSelection()
     tp.live_grep({ default_text = text })
 end, opts)
@@ -89,8 +89,28 @@ keymaps.set("n", "<M-up>", ":m-2<CR>", opts)
 keymaps.set("v", "<M-down>", ":<','>m+2<CR>", opts)
 keymaps.set("v", "<M-up>", ":<','>m-2<CR>", opts)
 
+-- Sort
+keymaps.set("v", "<C-A>", ":'<,'>Sort i<CR>", opts)
+
 -- Diffview
 keymaps.set("n", "<leader>gg", ":DiffviewOpen<CR>", opts)
 
 -- Search
 keymaps.set("v", "/", '"fy/\\V<C-R>f<CR>N', opts)
+keymaps.set("n", "<C-d>", 'vaw"fy/\\V<C-R>f<CR>N', opts)
+
+-- Window keymaps
+-- For windows enthusiasts
+-- Me ? mostly use <C-x> to delete single line (faster than dd)
+-- Copy
+keymaps.set("v", "<C-c>", "y", opts)
+keymaps.set("n", "<C-c>", "yy", opts)
+
+-- Paste
+keymaps.set("v", "<C-v>", "p", opts)
+keymaps.set("n", "<C-v>", "p", opts)
+keymaps.set("i", "<C-v>", "<C-r>*", opts)
+
+-- Cut
+keymaps.set("v", "<C-x>", "d", opts)
+keymaps.set("n", "<C-x>", "dd", opts)

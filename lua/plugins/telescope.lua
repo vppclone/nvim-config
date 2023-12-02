@@ -29,6 +29,17 @@ return {
             desc = "Lists files in your current working directory, respects .gitignore",
         },
         {
+            "<C-p>",
+            function()
+                local builtin = require("telescope.builtin")
+                builtin.find_files({
+                    no_ignore = false,
+                    hidden = true,
+                })
+            end,
+            desc = "Lists files in your current working directory, respects .gitignore",
+        },
+        {
             ";r",
             function()
                 local builtin = require("telescope.builtin")

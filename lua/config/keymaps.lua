@@ -67,10 +67,6 @@ keymaps.set("n", "<C-k>", function()
 end, opts)
 
 -- Telescope keymap
-keymaps.set("n", "<C-p>", function()
-    tp.git_files()
-end, opts)
-
 keymaps.set("n", "<C-F>", function()
     tp.live_grep()
 end, opts)

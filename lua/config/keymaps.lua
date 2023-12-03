@@ -4,26 +4,26 @@
 
 local keymaps = vim.keymap
 local opts = {
-    noremap = true,
-    silent = true,
+  noremap = true,
+  silent = true,
 }
 local tp = require("telescope.builtin")
 
 function vim.getVisualSelection()
-    vim.cmd('noau normal! "vy"')
-    local text = vim.fn.getreg("v")
-    vim.fn.setreg("v", {})
+  vim.cmd('noau normal! "vy"')
+  local text = vim.fn.getreg("v")
+  vim.fn.setreg("v", {})
 
-    if text == nil then
-        return ""
-    end
+  if text == nil then
+    return ""
+  end
 
-    text = string.gsub(text, "\n", "")
-    if #text > 0 then
-        return text
-    else
-        return ""
-    end
+  text = string.gsub(text, "\n", "")
+  if #text > 0 then
+    return text
+  else
+    return ""
+  end
 end
 
 -- inc/desc number
@@ -36,44 +36,47 @@ keymaps.set("n", "r", "<C-r>", opts)
 -- Select all
 keymaps.set("n", "<C-a>", "gg<S-v>G")
 
--- bufferline
-keymaps.set("n", "<tab>", ":BufferLineCycleNext<CR>", opts)
-keymaps.set("n", "<s-tab>", ":BufferLineCyclePrev<CR>", opts)
-keymaps.set("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opts)
-keymaps.set("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opts)
-keymaps.set("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opts)
-keymaps.set("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", opts)
-keymaps.set("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opts)
-keymaps.set("n", "<C-q>", ":bd<CR>", opts)
+-- tab
+keymaps.set("n", "ta", ":$tabnew<CR>", opts)
+keymaps.set("n", "tc", ":tabclose<CR>", opts)
+keymaps.set("n", "to", ":tabonly<CR>", opts)
+keymaps.set("n", "tmp", ":-tabmove<CR>", opts)
+keymaps.set("n", "tmn", ":+tabmove<CR>", opts)
+
+keymaps.set("n", "tn", ":tabn<CR>", opts)
+keymaps.set("n", "<Tab>", ":tabn<CR>", opts)
+keymaps.set("n", "tp", ":tabp<CR>", opts)
+keymaps.set("n", "<S-Tab>", ":tabp<CR>", opts)
+
 
 -- Split
 keymaps.set("n", "ss", ":split<CR>", opts)
 keymaps.set("n", "sv", ":vsplit<CR>", opts)
 
 -- Window
-keymaps.set("n", "wh", "<C-w>h", opts)
-keymaps.set("n", "wj", "<C-w>j", opts)
-keymaps.set("n", "wk", "<C-w>k", opts)
-keymaps.set("n", "wl", "<C-w>l", opts)
-keymaps.set("n", "wq", "<C-w>q", opts)
+keymaps.set("n", "sh", "<C-w>h", opts)
+keymaps.set("n", "sj", "<C-w>j", opts)
+keymaps.set("n", "sk", "<C-w>k", opts)
+keymaps.set("n", "sl", "<C-w>l", opts)
+keymaps.set("n", "sq", "<C-w>q", opts)
 
 -- Diagnostic
 keymaps.set("n", "<C-j>", function()
-    vim.diagnostic.goto_next()
+  vim.diagnostic.goto_next()
 end, opts)
 
 keymaps.set("n", "<C-k>", function()
-    vim.diagnostic.goto_prev()
+  vim.diagnostic.goto_prev()
 end, opts)
 
 -- Telescope keymap
 keymaps.set("n", "<C-F>", function()
-    tp.live_grep()
+  tp.live_grep()
 end, opts)
 
 keymaps.set("v", "<C-F>", function()
-    local text = vim.getVisualSelection()
-    tp.live_grep({ default_text = text })
+  local text = vim.getVisualSelection()
+  tp.live_grep({ default_text = text })
 end, opts)
 
 -- Aerial

@@ -24,9 +24,18 @@ require("lazy").setup({
         { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 
         -- No need to config plugins
-        "ThePrimeagen/vim-be-good",
-        "sQVe/sort.nvim",
-        "sindrets/diffview.nvim",
+        {
+            "ThePrimeagen/vim-be-good",
+            event = "VeryLazy",
+        },
+        {
+            "sindrets/diffview.nvim",
+            event = "VeryLazy",
+        },
+        {
+            "sQVe/sort.nvim",
+            event = "VeryLazy",
+        },
 
         -- Override
         { import = "plugins" },

@@ -10,6 +10,3 @@ local opt = vim.o
 
 -- Tab options
 opt.tabstop = 4
-
--- Always show tabline
-vim.o.showtabline = 2

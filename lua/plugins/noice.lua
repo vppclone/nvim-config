@@ -18,7 +18,7 @@ return {
                 focused = false
             end,
         })
-        table.insert(opts.routes, 1, {
+        table.insert(opts.routes, {
             filter = {
                 cond = function()
                     return not focused

@@ -42,17 +42,13 @@ keymaps.set("n", "tc", ":tabclose<CR>", opts)
 keymaps.set("n", "to", ":tabonly<CR>", opts)
 keymaps.set("n", "tmp", ":-tabmove<CR>", opts)
 keymaps.set("n", "tmn", ":+tabmove<CR>", opts)
-
 keymaps.set("n", "tn", ":tabn<CR>", opts)
 keymaps.set("n", "tp", ":tabp<CR>", opts)
 
 -- buffer
-keymaps.set("n", "bo", ":%bd|e#<CR>", opts)
-keymaps.set("n", "bc", ":bd<CR>", opts)
-
-keymaps.set("n", "bn", ":BufferLineCycleNext<CR>", opts)
+keymaps.set("n", "<leader>kw", ":%bd|e#<CR>", opts)
+keymaps.set("n", "<leader>kq", ":bd<CR>", opts)
 keymaps.set("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
-keymaps.set("n", "bp", ":BufferLineCyclePrev<CR>", opts)
 keymaps.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
 
 -- Split
@@ -76,11 +72,7 @@ keymaps.set("n", "<C-k>", function()
 end, opts)
 
 -- Telescope keymap
-keymaps.set("n", "<C-F>", function()
-    tp.live_grep()
-end, opts)
-
-keymaps.set("v", "<C-F>", function()
+keymaps.set("v", "<C-g>", function()
     local text = vim.getVisualSelection()
     tp.live_grep({ default_text = text })
 end, opts)

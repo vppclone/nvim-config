@@ -10,3 +10,5 @@ local opt = vim.o
 
 -- Tab options
 opt.tabstop = 4
+
+opt.wrap = true

@@ -52,15 +52,15 @@ keymaps.set("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
 keymaps.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
 
 -- Split
-keymaps.set("n", "ws", ":split<CR>", opts)
-keymaps.set("n", "wv", ":vsplit<CR>", opts)
+keymaps.set("n", "ss", ":split<CR>", opts)
+keymaps.set("n", "sv", ":vsplit<CR>", opts)
 
 -- Window
-keymaps.set("n", "wh", "<C-w>h", opts)
-keymaps.set("n", "wj", "<C-w>j", opts)
-keymaps.set("n", "wk", "<C-w>k", opts)
-keymaps.set("n", "wl", "<C-w>l", opts)
-keymaps.set("n", "wq", "<C-w>q", opts)
+keymaps.set("n", "sh", "<C-w>h", opts)
+keymaps.set("n", "sj", "<C-w>j", opts)
+keymaps.set("n", "sk", "<C-w>k", opts)
+keymaps.set("n", "sl", "<C-w>l", opts)
+keymaps.set("n", "sq", "<C-w>q", opts)
 
 -- Diagnostic
 keymaps.set("n", "<C-j>", function()
